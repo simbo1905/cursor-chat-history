@@ -23,7 +23,7 @@ The script collects only paths where the path contains the segment **`agent-tran
 
 Each line is usually a JSON object with chat/event fields. User-authored content commonly has **`"role": "user"`** (sometimes **`human`**) and **`message.content`** items like **`{"type": "text", "text": "..."}`**.
 
-**This skill is not** about **Codex CLI** session rollouts (`rollout-*.jsonl` under `$CODEX_HOME/sessions`). For that, use **`codex_chat_history`**.
+**This skill is not** about **Codex CLI** session rollouts (`rollout-*.jsonl` under `$CODEX_HOME/sessions`). For that, use **[codex-chat-history](https://github.com/simbo1905/codex-chat-history)** (script **`codex_chat_history.py`**).
 
 ## When to use it
 
@@ -132,7 +132,7 @@ jq -r '
 ' "$TRANSCRIPT"
 ```
 
-With the script (path redaction similar to **`codex_chat_history`**):
+With the script (path redaction similar to **`codex_chat_history.py`** in [codex-chat-history](https://github.com/simbo1905/codex-chat-history)):
 
 ```sh
 ./cursor_chat_history.py user-messages "$TRANSCRIPT"
@@ -195,7 +195,7 @@ Cursor does not guarantee transcript retention forever; backups and pruning are 
 
 ## Canonical source and releases
 
-- **Repository:** https://github.com/simbo1905/cursor_chat_history  
+- **Repository:** https://github.com/simbo1905/cursor-chat-history  
 - **Public gist** (mirrors this folder’s three files): https://gist.github.com/simbo1905/a023ec8cec4610f3f6f8878be95a4e49  
 
 Portable bundle: download **SKILL.md**, **cursor_chat_history.py**, and **line_histogram.awk** from the gist or repo; use **`awk -f ./line_histogram.awk`** when not inside another project tree.

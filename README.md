@@ -1,6 +1,6 @@
-# cursor_chat_history
+# cursor-chat-history
 
-> A **SKILL.md** plus a **`uv run --script`** helper to **back up**, **list**, and **inspect** Cursor IDE **agent transcript** JSONL under **`~/.cursor/projects/.../agent-transcripts/`** — gzip mirrors that preserve the tree, optional line-size histograms, and user-message extraction. This is **not** Codex CLI session rollouts (`rollout-*.jsonl`); see [codex_chat_history](https://github.com/simbo1905/codex_chat_history) for that.
+> A **SKILL.md** plus a **`uv run --script`** helper to **back up**, **list**, and **inspect** Cursor IDE **agent transcript** JSONL under **`~/.cursor/projects/.../agent-transcripts/`** — gzip mirrors that preserve the tree, optional line-size histograms, and user-message extraction. This is **not** Codex CLI session rollouts (`rollout-*.jsonl`); see [codex-chat-history](https://github.com/simbo1905/codex-chat-history) for that.
 
 ## TL;DR
 
@@ -8,7 +8,7 @@ Jump to [Install](#install), or fetch **SKILL.md** alone:
 
 ```bash
 mkdir -p ~/.cursor/skills/cursor_chat_history && \
-  curl -fsSL https://raw.githubusercontent.com/simbo1905/cursor_chat_history/main/cursor_chat_history/SKILL.md \
+  curl -fsSL https://raw.githubusercontent.com/simbo1905/cursor-chat-history/main/cursor_chat_history/SKILL.md \
   -o ~/.cursor/skills/cursor_chat_history/SKILL.md
 ```
 
@@ -37,7 +37,7 @@ Bundled in **`cursor_chat_history/`**:
 | **`cursor_chat_history.py`** | `backup`, `list`, `profile`, `bounds`, `user-messages` (Python 3.13.x via PEP 723) |
 | **`line_histogram.awk`** | Optional histograms / line slices for huge JSONL |
 
-**Repo (canonical):** [github.com/simbo1905/cursor_chat_history](https://github.com/simbo1905/cursor_chat_history)  
+**Repo (canonical):** [github.com/simbo1905/cursor-chat-history](https://github.com/simbo1905/cursor-chat-history)  
 **Gist (same three files):** [gist.github.com/simbo1905/a023ec8cec4610f3f6f8878be95a4e49](https://gist.github.com/simbo1905/a023ec8cec4610f3f6f8878be95a4e49)
 
 ## Install
@@ -46,7 +46,7 @@ Bundled in **`cursor_chat_history/`**:
 
 ```bash
 mkdir -p ~/.cursor/skills
-git clone https://github.com/simbo1905/cursor_chat_history.git ~/.cursor/skills/cursor_chat_history
+git clone https://github.com/simbo1905/cursor-chat-history.git ~/.cursor/skills/cursor_chat_history
 ```
 
 **Codex CLI / Claude Code:** same layout works under `~/.codex/skills` or `~/.claude/skills` if you want the same skill tree there.
@@ -88,7 +88,7 @@ rm -rf "$DEST"
    gh gist edit "$GIST" --filename line_histogram.awk "$D/line_histogram.awk"
    gh gist edit "$GIST" --filename cursor_chat_history.py "$D/cursor_chat_history.py"
    gh api -X PATCH "gists/$GIST" \
-     -f description='Cursor Chat History: SKILL + cursor_chat_history.py + line_histogram.awk (mirrors https://github.com/simbo1905/cursor_chat_history)'
+     -f description='Cursor Chat History: SKILL + cursor_chat_history.py + line_histogram.awk (mirrors https://github.com/simbo1905/cursor-chat-history)'
    ```
 
 4. Refresh **README** / **SKILL.md** if behavior or defaults changed.
